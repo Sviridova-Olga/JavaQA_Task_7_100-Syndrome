@@ -34,21 +34,18 @@
                 </configuration>
             </plugin>
 
-            <!-- spotbugs -->
+            <!--checkstyle -->
             <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.0.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.github.spotbugs</groupId>
-                        <artifactId>spotbugs</artifactId>
-                        <version>4.0.3</version>
-                    </dependency>
-                </dependencies>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>check</id>
+                        <id>verify</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
